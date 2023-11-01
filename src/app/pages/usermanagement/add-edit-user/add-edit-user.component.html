@@ -1,0 +1,68 @@
+<form [formGroup]="addUserForm" (ngSubmit)="onSubmit()">
+    <h2 mat-dialog-title> {{ data?.type == 'add' ? 'Add' : 'Edit'}} User </h2>
+    <mat-dialog-content>
+        <div class="mb-3">
+            <label class="col-form-label" for="recipient-name">First Name</label>
+            <input class="form-control" formControlName="name" type="text"
+                [ngClass]="{ 'is-invalid': submitted && f['name'].errors }">
+            <div *ngIf="submitted && f['name'].errors" class="invalid-feedback">
+                <div *ngIf="f['name'].errors['required']">
+                    Name is required</div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="col-form-label" for="recipient-name">Gender : </label>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="gender" formControlName="gender" id="inlineRadio1"
+                    value="male">
+                <label class="form-check-label" for="inlineRadio1">Male</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="gender" formControlName="gender" id="inlineRadio2"
+                    value="female">
+                <label class="form-check-label" for="inlineRadio2">Female</label>
+            </div>
+
+            <div *ngIf="submitted && f['gender'].errors" class="invalid-feedback">
+                <div *ngIf="f['gender'].errors['required']">
+                    Gender is required</div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="col-form-label" for="recipient-name">Age</label>
+            <input class="form-control" formControlName="age" type="number"
+                [ngClass]="{ 'is-invalid': submitted && f['age'].errors }">
+            <div *ngIf="submitted && f['age'].errors" class="invalid-feedback">
+                <div *ngIf="f['age'].errors['required']">
+                    Age is required</div>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label class="col-form-label" for="recipient-name">Email</label>
+            <input class="form-control" formControlName="email" type="email"
+                [ngClass]="{ 'is-invalid': submitted && f['email'].errors }">
+            <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+                <div *ngIf="f['email'].errors['required']">Email
+                    is required</div>
+                <div *ngIf="f['email'].errors['email']">Email is
+                    invalid</div>
+            </div>
+        </div>
+        <div class="mb-3" *ngIf="data?.type == 'add'">
+            <label class="col-form-label" for="recipient-name">Profile
+                Pic</label>
+            <input class="form-control" formControlName="profile" type="file"
+                [ngClass]="{ 'is-invalid': submitted && f['profile'].errors }">
+            <div *ngIf="submitted && f['profile'].errors" class="invalid-feedback">
+                <div *ngIf="f['profile'].errors['required']">
+                    Gender is required</div>
+            </div>
+        </div>
+
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button type="submit" class="btn btn-success" mat-button>{{data?.type == 'add' ? 'Save' : 'Update'}}</button>
+        <button type="button" class="btn btn-secondary ms-1" mat-button mat-dialog-close>Close</button>
+    </mat-dialog-actions>
+</form>

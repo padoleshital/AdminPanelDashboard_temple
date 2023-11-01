@@ -1,0 +1,128 @@
+<!-- ========== Left Sidebar Start ========== -->
+
+<ng-template #contentTemplate>
+
+  <!--- Sidemenu -->
+  <div id="sidebar-menu">
+    <!-- Left Menu Start -->
+    <ul class="metismenu list-unstyled" id="side-menu" #sideMenu>
+      <li>
+        <a href="javascript:void(0);" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+          [routerLink]="['/dashboard']">
+          <i class='bx bxs-dashboard'></i>
+          <span> Dashboard</span>
+        </a>
+      </li>
+      <li (click)="Employee($event)">
+        <a class="has-child" href="javascript:void(0);" routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/usermanagement']">
+          <i class="bx bx-user"></i>
+          <span>Employees</span>
+        </a>
+        <div class="sub-menu-list" data-popper-placement="right">
+          <ul class="sub-menu-popper">
+            <li class="menu-item">
+              <a class="inner-item">
+                <i class="bx bx-user"></i>Employees list</a>
+            </li>
+            <li class="menu-item">
+              <a class="inner-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <i class='bx bx-list-plus'></i>Add Department</a>
+            </li>
+            <li class="menu-item">
+              <a class="inner-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <i class='bx bxs-add-to-queue'></i>Add Designation</a>
+            </li>
+            <li class="menu-item">
+              <a class="inner-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <i class='bx bx-list-ul'></i>Add Employee</a>
+            </li>
+            <li class="menu-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+              <a class="inner-item"><i class="bx bx-user"></i>list</a>
+            </li>
+          </ul>
+        </div>
+        <!-- </li>
+      <li>
+        <a href="javascript:void(0);" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+          [routerLink]="['/airline']">
+          <i class="bx bx-user"></i>
+          <span>Airline</span>
+        </a>
+      </li>
+      <li>
+        <a href="javascript:void(0);" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+          [routerLink]="['/blog']">
+          <i class="bx bx-user"></i>
+          <span>Blog</span>
+        </a>
+      </li>
+      <li>
+        <a href="javascript:void(0);" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+          [routerLink]="['/passager']">
+          <i class="bx bx-user"></i>
+          <span>Passener</span>
+        </a>
+      </li> -->
+      </li>
+      <li (click)="Employee($event)">
+        <a class="has-child" href="javascript:void(0);" routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact:true}" [routerLink]="['/store']">
+          <i class='bx bx-store'></i>
+          <span>Store</span>
+        </a>
+        <div class="sub-menu-list" data-popper-placement="right">
+          <ul class="sub-menu-popper">
+            <li class="menu-item">
+              <a class="inner-item">
+                <i class="bx bx-user"></i>Glossary store</a>
+            </li>
+            <li class="menu-item">
+              <a class="inner-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <i class='bx bx-list-plus'></i>grain Store</a>
+            </li>
+            <li class="menu-item">
+              <a class="inner-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <i class='bx bxs-add-to-queue'></i>Flower Store</a>
+            </li>
+            <li class="menu-item">
+              <a class="inner-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <i class='bx bx-list-ul'></i>Organic store</a>
+            </li>
+            <li class="menu-item">
+              <a class="inner-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <i class='bx bx-list-ul'></i>Fruite store</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <a href="javascript:void(0);" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
+          [routerLink]="['/shops']">
+          <i class='bx bx-store'></i>
+          <span>Available-item</span>
+        </a>
+      </li>
+      <li>
+        <a href="javascript:void(0);" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
+          [routerLink]="['/Placed-order']">
+          <i class='bx bx-store'></i>
+          <span>Palced-order</span>
+        </a>
+      </li>
+
+    </ul>
+  </div>
+</ng-template>
+<!-- Sidebar -->
+
+<div class="vertical-menu">
+  <ngx-simplebar class="h-100" #componentRef>
+    <div *ngIf="!isCondensed">
+      <ng-container *ngTemplateOutlet="contentTemplate"></ng-container>
+    </div>
+    <div *ngIf="isCondensed">
+      <ng-container *ngTemplateOutlet="contentTemplate"></ng-container>
+    </div>
+  </ngx-simplebar>
+</div>

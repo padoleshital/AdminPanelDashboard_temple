@@ -1,0 +1,355 @@
+<div class="container-fluid">
+    <!-- start page title -->
+    <div class="row">
+        <div class="col-12">
+            <div class="page-title-box d-flex align-items-center justify-content-between">
+                <h4 class="mb-0 font-size-18">User Management</h4>
+            </div>
+        </div>
+    </div>
+    <!-- end page title -->
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="text-sm-end"><button type="button" mat-button (click)="openDialog('add')"
+                                    class="btn btn-success btn-rounded mb-2 me-2"><i class="mdi mdi-plus me-1"></i> Add
+                                    User </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-2 mt-2">
+                        <div class="col-sm-12 col-md-6">
+                            <label class="d-inline-flex align-items-center fw-normal">
+                                Show&nbsp; <select class="form-control form-select form-select-sm">
+                                    <option value="10" selected>10</option>
+                                    <option value="25">25</option>
+                                    <option value="50">50</option>
+                                    <option value="100">100</option>
+                                </select>&nbsp;users </label>
+                        </div>
+                        <div class="col-sm-12 col-md-6">
+                            <div class="search-box me-2 mb-2 d-inline-block float-end">
+                                <div class="position-relative"><input type="text" class="form-control"
+                                        placeholder="Search..."><i class="bx bx-search-alt search-icon"></i></div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="table-responsive mt-4">
+                        <table class="table align-middle table-nowrap mb-0">
+                            <thead class="table-light">
+                                <tr>
+                                    <th class="align-middle">No.</th>
+                                    <th class="align-middle">Profile Pic</th>
+                                    <th class="align-middle">Username</th>
+                                    <th class="align-middle">Email</th>
+                                    <th class="align-middle">Date of birth</th>
+                                    <th class="align-middle">Age</th>
+                                    <th class="align-middle">Gender</th>
+                                    <th class="align-middle">Created At</th>
+                                    <th class="align-middle">Status</th>
+                                    <th class="align-middle">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><a href="javascript: void(0);" class="text-body fw-bold">1</a></td>
+                                    <td>
+                                        <img src="assets/images/small/img-2.jpg" alt=""
+                                            class="avatar-md h-auto d-block rounded">
+                                    </td>
+                                    <td>
+                                        Abc
+                                    </td>
+                                    <td>
+                                        abc@gmail.com
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-pill badge-soft-success font-size-11">28-05-1998</span>
+                                    </td>
+                                    <td>
+                                        23
+                                    </td>
+                                    <td>
+                                        Female
+                                    </td>
+                                    <td>
+                                        Feb 21, 2022
+                                    </td>
+                                    <td>
+                                        <div class="form-check form-switch mb-3">
+                                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked"
+                                                checked>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-primary btn-sm waves-effect waves-light"
+                                            (click)="viewUser(viewContent)">
+                                            View
+                                        </button>
+                                        <ng-template #viewContent let-modal>
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel2">View User</h5>
+                                                <button class="btn-close" type="button"
+                                                    (click)="modal.close('Close click')"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <p><b>Name :</b> Abc</p>
+                                                <p><b>Email :</b> abc@gmail.com</p>
+                                                <p><b>DOB :</b> 28-05-1998</p>
+                                                <p><b>Age :</b> 23</p>
+                                                <p><b>Gender :</b> Female</p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    (click)="modal.close('Close click')">Close</button>
+                                            </div>
+                                        </ng-template>
+
+                                        <button type="button"
+                                            class="btn btn-success btn-sm waves-effect waves-light ms-1"
+                                            (click)="openDialog('edit')">
+                                            Update
+                                        </button>
+
+                                        <button type="button"
+                                            class="btn btn-danger btn-sm waves-effect waves-light ms-1"
+                                            (click)="deleteUser()">
+                                            Delete
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="javascript: void(0);" class="text-body fw-bold">2</a> </td>
+                                    <td>
+                                        <img src="assets/images/small/img-2.jpg" alt=""
+                                            class="avatar-md h-auto d-block rounded">
+                                    </td>
+                                    <td>
+                                        Abc
+                                    </td>
+                                    <td>
+                                        abc@gmail.com
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-pill badge-soft-success font-size-11">28-05-1998</span>
+                                    </td>
+                                    <td>
+                                        23
+                                    </td>
+                                    <td>
+                                        Female
+                                    </td>
+                                    <td>
+                                        Feb 21, 2022
+                                    </td>
+                                    <td>
+                                        <div class="form-check form-switch mb-3">
+                                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked"
+                                                checked="">
+
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-primary btn-sm waves-effect waves-light"
+                                            (click)="viewUser(viewContent)">
+                                            View
+                                        </button>
+                                        <button type="button"
+                                            class="btn btn-success btn-sm waves-effect waves-light ms-1">
+                                            Update
+                                        </button>
+                                        <button type="button"
+                                            class="btn btn-danger btn-sm waves-effect waves-light ms-1"
+                                            (click)="deleteUser()">
+                                            Delete
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+
+                                    <td><a href="javascript: void(0);" class="text-body fw-bold">3</a> </td>
+                                    <td>
+                                        <img src="assets/images/small/img-2.jpg" alt=""
+                                            class="avatar-md h-auto d-block rounded">
+                                    </td>
+                                    <td>
+                                        Abc
+                                    </td>
+                                    <td>
+                                        abc@gmail.com
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-pill badge-soft-success font-size-11">28-05-1998</span>
+                                    </td>
+                                    <td>
+                                        23
+                                    </td>
+                                    <td>
+                                        Female
+                                    </td>
+                                    <td>
+                                        Feb 21, 2022
+                                    </td>
+                                    <td>
+                                        <div class="form-check form-switch mb-3">
+                                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked"
+                                                checked="">
+
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-primary btn-sm waves-effect waves-light"
+                                            (click)="viewUser(viewContent)">
+                                            View
+                                        </button>
+                                        <button type="button"
+                                            class="btn btn-success btn-sm waves-effect waves-light ms-1">
+                                            Update
+                                        </button>
+                                        <button type="button"
+                                            class="btn btn-danger btn-sm waves-effect waves-light ms-1"
+                                            (click)="deleteUser()">
+                                            Delete
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+
+                                    <td><a href="javascript: void(0);" class="text-body fw-bold">4</a> </td>
+                                    <td>
+                                        <img src="assets/images/small/img-2.jpg" alt=""
+                                            class="avatar-md h-auto d-block rounded">
+                                    </td>
+                                    <td>
+                                        Abc
+                                    </td>
+                                    <td>
+                                        abc@gmail.com
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-pill badge-soft-success font-size-11">28-05-1998</span>
+                                    </td>
+                                    <td>
+                                        23
+                                    </td>
+                                    <td>
+                                        Female
+                                    </td>
+                                    <td>
+                                        Feb 21, 2022
+                                    </td>
+                                    <td>
+                                        <div class="form-check form-switch mb-3">
+                                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked"
+                                                checked="">
+
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-primary btn-sm waves-effect waves-light"
+                                            (click)="viewUser(viewContent)">
+                                            View
+                                        </button>
+                                        <button type="button"
+                                            class="btn btn-success btn-sm waves-effect waves-light ms-1">
+                                            Update
+                                        </button>
+                                        <button type="button"
+                                            class="btn btn-danger btn-sm waves-effect waves-light ms-1"
+                                            (click)="deleteUser()">
+                                            Delete
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+
+                                    <td><a href="javascript: void(0);" class="text-body fw-bold">5</a> </td>
+                                    <td>
+                                        <img src="assets/images/small/img-2.jpg" alt=""
+                                            class="avatar-md h-auto d-block rounded">
+                                    </td>
+                                    <td>
+                                        Abc
+                                    </td>
+                                    <td>
+                                        abc@gmail.com
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-pill badge-soft-success font-size-11">28-05-1998</span>
+                                    </td>
+                                    <td>
+                                        23
+                                    </td>
+                                    <td>
+                                        Female
+                                    </td>
+                                    <td>
+                                        Feb 21, 2022
+                                    </td>
+                                    <td>
+                                        <div class="form-check form-switch mb-3">
+                                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
+
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-primary btn-sm waves-effect waves-light"
+                                            (click)="viewUser(viewContent)">
+                                            View
+                                        </button>
+                                        <button type="button"
+                                            class="btn btn-success btn-sm waves-effect waves-light ms-1">
+                                            Update
+                                        </button>
+                                        <button type="button"
+                                            class="btn btn-danger btn-sm waves-effect waves-light ms-1"
+                                            (click)="deleteUser()">
+                                            Delete
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- end table-responsive -->
+                    <div class="row mt-2">
+                        <div class="col-lg-12">
+                            <ul class="pagination pagination-rounded justify-content-end mb-2">
+                                <li class="page-item disabled">
+                                    <a href="javascript: void(0);" class="page-link"><i
+                                            class="mdi mdi-chevron-left"></i></a>
+                                </li>
+                                <li class="page-item">
+                                    <a href="javascript: void(0);" class="page-link">1</a>
+                                </li>
+                                <li class="page-item active">
+                                    <a href="javascript: void(0);" class="page-link">2</a>
+                                </li>
+                                <li class="page-item">
+                                    <a href="javascript: void(0);" class="page-link">3</a>
+                                </li>
+                                <li class="page-item">
+                                    <a href="javascript: void(0);" class="page-link">4</a>
+                                </li>
+                                <li class="page-item">
+                                    <a href="javascript: void(0);" class="page-link">5</a>
+                                </li>
+                                <li class="page-item">
+                                    <a href="javascript: void(0);" class="page-link"><i
+                                            class="mdi mdi-chevron-right"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end row -->
+</div> <!-- container-fluid -->
